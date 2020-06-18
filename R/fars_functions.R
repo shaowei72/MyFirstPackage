@@ -84,8 +84,10 @@ fars_read_years <- function(years) {
 #'
 #' @note Makes use of fars_read_years() functions
 #'
-#' @importFrom magrittr %>%
+#' @importFrom magrittr  %>%
+#'
 #' @importFrom dplyr bind_rows group_by summarize
+#'
 #' @importFrom tidyr spread
 #'
 #' @examples
@@ -94,10 +96,11 @@ fars_read_years <- function(years) {
 #' @export
 fars_summarize_years <- function(years) {
   dat_list <- fars_read_years(years)
-  dplyr::bind_rows(dat_list) %>%
-    dplyr::group_by(year, MONTH) %>%
-    dplyr::summarize(n = n()) %>%
-    tidyr::spread(year, n)
+  dplyr::bind_rows(dat_list)
+  # %>%
+  #   dplyr::group_by(year, MONTH) %>%
+  #   dplyr::summarize(n = n()) %>%
+  #   tidyr::spread(year, n)
 }
 
 #' Plots fatal accidents in a State for a particular year
