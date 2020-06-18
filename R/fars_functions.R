@@ -54,7 +54,8 @@ make_filename <- function(year) {
 #' @examples
 #' fars_read_years(c("2020", "2019", "2018"))
 #'
-#' @importFrom dplyr mutate select
+#' @importFrom dplyr  mutate select
+#' @importFrom magrittr %>%
 #'
 #' @note Makes use of make_filename() and fars_read() functions
 #'
@@ -83,6 +84,7 @@ fars_read_years <- function(years) {
 #'
 #' @note Makes use of fars_read_years() functions
 #'
+#' @importFrom magrittr %>%
 #' @importFrom dplyr bind_rows group_by summarize
 #' @importFrom tidyr spread
 #'
@@ -113,6 +115,7 @@ fars_summarize_years <- function(years) {
 #'
 #' @importFrom maps map
 #' @importFrom graphics points
+#' @importFrom dplyr  filter
 #'
 #' @examples
 #' fars_map_state(20, 2020)
