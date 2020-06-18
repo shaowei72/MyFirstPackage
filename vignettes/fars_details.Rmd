@@ -1,0 +1,62 @@
+---
+title: "How to use the FARS functions"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{How to use the FARS functions}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+
+FARS is a nationwide census providing NHTSA, Congress and the American public yearly data regarding fatal injuries suffered in motor vehicle traffic crashes. The data files are in CSV format, often compressed. Function could read CSV and BZ2 files as well. It has 50 variables=columns (eg. STATE, CITY, COUNTY, DAY, MONTH, YEAR, FATALS etc.), and around 30k records.
+
+This `html_vignette` for FARS package shows basic usage of the functions provided.
+
+## Installation
+`devtools::install_github("shaowei72/MyFirstPackage")`
+
+## Vignette Info
+This package contains the following R functions for analysing FARS data:
+
+- fars_read
+- make_filename
+- fars_read_years
+- fars_summarize_years
+- fars_map_state
+
+Below we could see the location of the FARS data file attached to this package.
+
+```{r echo=FALSE, warning=FALSE, message =FALSE}
+library("MyFirstPackage")
+library(dplyr)
+fars2015_path <- system.file("extdata","accident_2015.csv.bz2", package = "MyFirstPackage")
+fars2015_path
+
+```
+
+
+Function `fars_summarize_years()` shows summary for given years for each month in table.
+
+```{r warning= FALSE, message=FALSE}
+apath <- dirname(fars2015_path)
+setwd(apath)
+fars_summarize_years(c(2013, 2014, 2015))
+
+```
+
+Summary of fatalities for each month of 2013 year. 
+
+Function `fars_map_state` shows accidents locations on the map:
+```{r, fig.height=4, fig.width=7, echo=FALSE, warning= FALSE, message=FALSE, fig.cap="Fatalities map for year 2013 and state 1"}
+apath <- dirname(fars2015_path)
+setwd(apath)
+fars_map_state(1,2013)
+
+```
