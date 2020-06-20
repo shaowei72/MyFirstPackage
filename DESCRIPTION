@@ -3,7 +3,7 @@ Type: Package
 Title: Analysing FARS data
 Version: 0.1.0
 Author: Swying
-Maintainer: shaowei.ying@gmail.com
+Maintainer: <shaowei.ying@gmail.com>
 Description: FARS is a nationwide census providing NHTSA, Congress and the American public yearly data regarding fatal injuries suffered in motor vehicle traffic crashes. 
 License: GPL (>=2)
 Encoding: UTF-8
