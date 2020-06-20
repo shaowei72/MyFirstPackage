@@ -35,8 +35,14 @@ Below we could see the location of the FARS data file attached to this package.
 
 ```{r echo=FALSE, warning=FALSE, message =FALSE}
 library("MyFirstPackage")
+library(dplyr)
 
+fars2013_path <- system.file("extdata","accident_2013.csv.bz2", package = "MyFirstPackage")
+fars2014_path <- system.file("extdata","accident_2014.csv.bz2", package = "MyFirstPackage")
 fars2015_path <- system.file("extdata","accident_2015.csv.bz2", package = "MyFirstPackage")
+
+fars2013_path
+fars2014_path
 fars2015_path
 
 ```
