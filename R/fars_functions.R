@@ -9,7 +9,9 @@
 #' @details Function aborts and prints error message if the file filename cannot be found
 #'
 #' @examples
+#' \dontrun{
 #' fars_read("input_file.csv")
+#' }
 #'
 #' @importFrom dplyr tbl_df
 #' @importFrom readr read_csv
@@ -33,7 +35,9 @@ fars_read <- function(filename) {
 #' @return This function returns a string
 #'
 #' @examples
+#' \dontrun{
 #' make_filename("2020")
+#' }
 #'
 #' @export
 make_filename <- function(year) {
@@ -52,7 +56,9 @@ make_filename <- function(year) {
 #' @details Function aborts and prints error message if there is no FARS data for a particular year
 #'
 #' @examples
+#' \dontrun{
 #' fars_read_years(c("2020", "2019", "2018"))
+#' }
 #'
 #' @importFrom dplyr  mutate select
 #' @importFrom magrittr %>%
@@ -91,7 +97,9 @@ fars_read_years <- function(years) {
 #' @importFrom tidyr spread
 #'
 #' @examples
+#' \dontrun{
 #' fars_summarize_years(c("2020", "2019", "2015"))
+#' }
 #'
 #' @export
 fars_summarize_years <- function(years) {
@@ -120,7 +128,9 @@ fars_summarize_years <- function(years) {
 #' @importFrom dplyr  filter
 #'
 #' @examples
-#' fars_map_state(20, 2020)
+#' \dontrun{
+#' fars_map_state(20, 2013)
+#' }
 #'
 #' @export
 fars_map_state <- function(state.num, year) {
